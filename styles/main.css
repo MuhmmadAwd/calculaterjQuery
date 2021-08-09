@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+}
+.container {
+  width: 50%;
+  padding-right: 15px;
+  padding-left: 15px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+.resultEle {
+  min-height: 40px;
+  font-size: 40px;
+  text-align: right;
+  margin-bottom: 10px;
+}
+.calcBtns {
+  display: flex;
+  flex-wrap: wrap;
+}
+.btn {
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  background-color: #8490ff;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 20px;
+  margin-left: 12px;
+}
+.btn-zero {
+  border-radius: 25px;
+  width: 100.5px;
+  height: 45px;
+}
+.btn-clear {
+  border-radius: 25px;
+  width: 100px;
+  height: 45px;
+}
+.btn-equal {
+  margin-left: 20px;
+}
+.btn-num {
+  background-color: #212638;
+  margin-left: 10px;
+}
