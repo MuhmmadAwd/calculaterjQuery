@@ -44,7 +44,7 @@ class CalculatorEngin {
   };
 }
 class CalculatorUi {
-  constructor(calcEngin, resultEle) {
+  constructor() {
     this.resultEle = "";
     this.calcEngin = new CalculatorEngin();
   } //end
@@ -56,15 +56,16 @@ class CalculatorUi {
     $(".btn-clear").click(this.onClearClick);
   };
   onBtnClick = (e) => {
-    let number = e.target.dataset.number;
+    let number = $(e.target).data("number");
     this.calcEngin.setNumber(number);
     if (this.calcEngin.operator !== null) {
       this.displayResult(this.calcEngin.num2);
+      return;
     }
     this.displayResult(this.calcEngin.num1);
   }; //end
   OnOperatorClick = (e) => {
-    let theOperator = e.target.dataset.operator;
+    let theOperator = $(e.target).data("operator");
     this.calcEngin.setOperator(theOperator);
     this.displayResult("");
   }; //end
@@ -75,11 +76,13 @@ class CalculatorUi {
 
   onClearClick = () => {
     this.calcEngin.clearCalc();
-    this.displayResult("");
+    this.displayResult(0);
   }; //end
   displayResult = (massage) => {
     this.resultEle.text(massage);
   }; //end
 } /** class end **/
 let calc1 = new CalculatorUi();
-$(document).ready(calc1.init);
+$(document).ready(function () {
+  calc1.init();
+});
